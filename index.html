@@ -6,20 +6,21 @@
     <meta charset = "UTF-8">
     <meta name="viewport" content="width-device-width, inital-scale=1">
 
-<!--The following is a link to the jQuery library-->
-
-    <script src="assets/javascript/jquery-3.1.1.min.js"></script>
-
-<!--The following is a link to a personal stylesheet-->
-
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"
-
-<!--The following is a link to a reset stylesheet-->
-
+<!--The following are links to the  javascript, a personal stylesheet and a reset stylesheet-->
+ 
+	<script type="text/javascript" src="assets/javascript/game.js"</script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-</head>
+<!--This tag should set provide the  viewport -->
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- This tag link to  jQuery CDN -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+</head>
 
 <body>
 
@@ -36,11 +37,15 @@
 
 <div class="wrapper">
 
-    <!--Header-->
+<!--Header-->
             
             <h1> Crystals Collector!</h1>
 
             <!--The following are instructions for the player to follow-->
+
+ <!--The following is a division for the instructions-->
+
+ <div class="instructions"></div>
 
 
             <p>You will be given a random number at the start of the game.</p>
@@ -61,13 +66,15 @@
 
     <!--This division will provide the random number --> 
 
-    <div class="row">
+    <div class="random number">
         <div class="col-md-3 col-md-offset-1 randomNumberDiv">
             <h2 id="randomNumber">random#</h2>
 
         </div>
+
     <!--This division will provide the counter-->
 
+        <div class = "winsloss"
         <div class="col-md-3 col-md-offset-1 winsLossesDiv">
             <p id="winsCounter"> Wins: </p>
             <p id="lossescounter">Losses</p>
@@ -77,45 +84,98 @@
 
 `<!--The following divisions are the crystal gem sections-->
 
+    <div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6" "id=buttonsColomn">
+
     <div class="row">
-        <div class-"col-md-1" col-md-offset-1 gem" value="gem1>
-                <img src="assets/images/gem1.png class="img-responsive alt="Gem1">
-        </div>
 
-        <div class="col-md-1 cold-md-offset-1 gem" value="gem2">
-                <img scr="assets/images/gem2.png" class="img-responsive" alt="Gem2">
-        </div>
-        <div class="col-md-1 col-md-offset-1 gem" value="gem4">
-            <img src="assets/images/gem4.png" class="img-responsive" alt="Gem4">
-        </div>
+				<!-- This should make the green gem button m-->
+				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+					<img src="assets/images/crystal01.svg" alt="Green Diamond" id="greenGem">
+				</div>
+				
+                <!-- This should amke the red gem button-->
+				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+					<img src="assets/images/crystal02.svg" alt="Red Diamond" id="redGem">
+				</div>
+
+				<!-- This should make the yellow gem button -->
+				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+					<img src="assets/images/crystal03.svg" alt="Yellow Diamond" id="yellowGem">
+				</div>
+
+				<!-- This should make the blue gem button-->
+
+				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+					<img src="assets/images/crystal04.svg" alt="Purple Diamond" id="purpleGem">
+				</div>
+			</div>
+		</div>
+
+    </div>
+
+    <!---The following division should provide the score column -->
+
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" id="scoreCol">
+			<h2>Your Score Is</h2>
+			<span id="yourScore">0</p>
+		</div>
+
+    </div>
+
+<!--The following division provides the total score-->
+
+<div class="total score ">
+
+     <p>Your total score is:</p>
     
-    </div>
-
-    <div class="userTotal">
-        <h2> Your total score is: 
-
-            <span id="finalTotal"></span>
-        </h2>
-
-    </div>
-
-<!--The following division provies the total score-->
-
-<div class="row">
-    <div class="col-md-3 col-md-offset-1 scoreDiv">
-        <p>Your total score is:</p>
     </div>
 
 <!--This division provdes the user score information-->
 
-<div class="row">
-    <div class="col-md 3" col-md-offset-1 scoreDiv">
+<div class="User Score">
+   
         <h2 id="userScore">Score</h2>
+    
     </div>
 
-<!--This seciton now ends the container -->
+
+
+<!-- This division  stores win and lose messages -->
+	<div class="row">
+		<div class="col-md-12">
+			<h3 id="message"></h3>
+		</div>
+	</div>
+
+
+	<!-- This division stores wins and Losses: -->
+	
+    <div class="row" id="gameStats">
+
+		 
+		<div class="col-md-6">
+			<h2 id="wins">Wins: 0</h2>
+		</div>
+
+		
+		<div class="col-md-6">
+			<h2 id="losses">Losses: 0</h2>
+		</div>
+
+	</div>
+
+	<!-- This division resets game -->
+
+	<div class="row">
+		<div class="col-md-12" id="resetCol">
+			<button type="button" class="btn btn-default btn-lg" id="reset">RESET GAME</button>
+		</div>
+
+	</div>
 
 </div>
 
 </body>
 </html>
+
+ 

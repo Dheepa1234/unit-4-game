@@ -1,0 +1,55 @@
+
+
+body {
+	background-image: url("../images/background.jpg");
+}
+
+
+.wrapper {
+	backround-color: #7FFFD4
+	width: 100%
+	max-width:960px;
+	margin: 0 auto;
+
+
+}
+
+h1{
+	background-color: orange;
+	color: white;
+	display:inline;
+	clear: both;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: solid 1px #ddd;
+}
+
+
+.instructions {
+	background-color: #FFDAB9;
+	width: 50%;
+	clear:both;
+	padding: 15px;
+	margin-top: 20px;
+	border: solid 1px #FFDAB9
+}
+
+.wrapper {
+	background: url("../images/dark_embroidery.png");
+}
+
+.row {
+	margin-bottom: 10px;
+}
+
+.randomNumberDiv {
+	background-color: lightgreen;
+}
+
+.winsLossesDiv {
+	background-color: lightblue;
+}
+
+.scoreDiv {
+	background-color: pink;
+}
