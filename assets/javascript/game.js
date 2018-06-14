@@ -46,13 +46,13 @@ $(document).ready (function() {
 
 
     randomNumberGenerator ();
-    randomGemGaluesGenerator ();
+    randomGemValuesGenerator ();
 
    var score =  0;
    var wins = 0;
    var losses = 0;
 
-   /* This should make the on-clic function work. I hope it works. */
+   /* This should make the on-clic function work. I hope it works. (I don't think it will.)*/
 
    $("greenGem").on("click",) function (){
        score = score + greenGemNumber;
