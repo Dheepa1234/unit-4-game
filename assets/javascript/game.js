@@ -21,7 +21,7 @@ $(document).ready(function() {
         crystal4 = Math.floor ((Math.random () * 12) + 1;
     }
 
-        randomNum = Math.floor ((Math.random() * 100) + 17;
+        randomNumber = Math.floor ((Math.random() * 100) + 17;
         $("#randomNumber").text (randomNumber);
 
         userScore = )
