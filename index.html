@@ -12,11 +12,11 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
-<!--This tag should set provide the  viewport -->
+<!--This tag should set provide the  viewport, the visible area of the user's browser -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- This tag link to  jQuery CDN -->
+<!-- This tag should link to  jQuery CDN -->
 
 <script src="script src"="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -24,14 +24,14 @@
 
 <body>
 
-    <!--This html page should contain one large wrapper for the entire page.-->
-    <!--Within the wrapper container, there is a crystals collector header at the top.-->
-    <!--Below the Crystals Collector section there is an instructions section.
-    <!--On the left hand side, there is a box conatining a number. This is another division-->
-    <!--On the right hand side, there is a win and loss counter-->
-    <!--Beneath the wins/loss counter, there should be a division for gem buttons-
-    <!--There should be a total score division beneath the gem division -->
-    <!--There is a footer border at the bottom within the wrapper container-->
+ <!--This html page should contain one large wrapper for the entire page -->
+ <!--Within the wrapper container, there is a crystals collector header at the top-->
+ <!--Below the Crystals Collector section there is an instructions section -->
+ <!--On the left hand side, there is a box conatining a number. This is another division-->
+ <!--On the right hand side, there is a win and loss counter-->
+ <!--Beneath the wins/loss counter, there should be a division for gem buttons-
+ <!--There should be a total score division beneath the gem division -->
+ <!--There is a footer border at the bottom within the wrapper container-->
 
 <!--The following should provide the wrapper container that houses all the divisions-->
 
@@ -64,48 +64,55 @@
 
         
 
-    <!--This division will provide the random number --> 
+    <!--This division should provide the random number --> 
 
     <div class="random number">
-        <div class="col-md-3 col-md-offset-1 randomNumberDiv">
+         
             <h> Random Number</h2>
 
         </div>
 
-    <!--This division will provide the counter-->
+    <!--This division should provide the number counter-->
 
         <div class = "winsloss"
-        <div class="col-md-3 col-md-offset-1 winsLossesDiv">
-            <p id="winsCounter"> Wins: </p>
-            <p id="lossescounter">Losses</p>
+       
+            <p class="winsCounter"> Wins: </p>
+            <p class ="lossescounter">Losses: </p>
+       
         </div>
 
 </div>
 
-`<!--The following divisions are the crystal gem sections-->
+<!--The following divisions are the crystal gem sections-->
 
-    <div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6" "id=buttonsColumn">
+ <!-- This division should make the green gem button -->
 
     <div class="row">
-
-				<!-- This should make the green gem button m-->
-				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				
+				
 					<img src="assets/images/greengem.jpeg" alt="Green Diamond" id="greenGem">
 				</div>
+	
+    <div class="row">
+
+    <!-- This division should amke the red gem button-->
+
 				
-                <!-- This should amke the red gem button-->
-				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 					<img src="assets/images/redgem.jpeg" alt="Red Diamond" id="redGem">
+
 				</div>
 
-				<!-- This should make the yellow gem button -->
-				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+		<!-- This division should make the yellow gem button -->
+        
+        <div class="row">
+				
 					<img src="assets/images/yellowgem.jpeg" alt="Yellow Diamond" id="yellowGem">
-				</div>
+				
+                </div>
 
-				<!-- This should make the blue gem button-->
+		<!-- This division hould make the blue gem button-->
 
-				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				
 					<img src="assets/images/bluegem.jpeg" alt="Blud Diamond" id="blueGem">
 				</div>
 			</div>

@@ -19,6 +19,9 @@ and calls it later. Identifers are given with the var keyword. The random
 number function should return a number between 19 and 120. The randomGemValues generator should
 generate random numbers and assign them to each gem */
 
+/*I am still not confident with the console log, and have thus not implemented it yet in areas where it 
+might be helpful*/
+
 $(document).ready (function() { 
       var randomNumber = 0;
       var greenGemNumber = 0;
@@ -106,7 +109,7 @@ $(document).ready (function() {
 					 
 					randomNumberGenerator();
 					randomGemValuesGenerator();
-					yourScoreIs = 0;
+					score = 0;
 					$("#yourScore").html(score);
 				}
 		});
@@ -117,71 +120,70 @@ $(document).ready (function() {
 			$("#yourScore").html(score);
 
 			
-				if (yourScoreIs === randomNumber) {
+				if (score === randomNumber) {
 					wins = wins + 1;
 					$("#wins").html("Wins: " + wins);
 					$("#message").html("YOU WIN");
 					 
 					randomNumberGenerator();
 					randomGemValuesGenerator();
-					yourScoreIs = 0;
-					$("#yourScore").html(yourScoreIs);
+					score = 0;
+					$("#yourScore").html(score);
 				}
 
 				 
-				if (yourScoreIs > randomNumber) {
+				if (score > randomNumber) {
 					losses = losses + 1;
 					$("#losses").html("Losses: " + losses);
 					$("#message").html("YOU LOSE");
 					 
 					randomNumberGenerator();
 					randomGemValuesGenerator();
-					yourScoreIs = 0;
-					$("#yourScore").html(yourScoreIs);
+					score = 0;
+					$("#yourScore").html(score);
 				}
 		});
 
 		
-		$("#purpleGem").on("click", function() {
-			yourScoreIs = yourScoreIs + purpleGemNmbr;
+		$("#blueGem").on("click", function() {
+			score = score + blueGemNmbr;
 			 
-			$("#yourScore").html(yourScoreIs);
+			$("#Score").html(score);
 
 			 
 
 				 
-				if (yourScoreIs === randomNumber) {
+				if (score === randomNumber) {
 					wins = wins + 1;
 					$("#wins").html("Wins: " + wins);
 					$("#message").html("YOU WIN");
 					 
 					randomNumberGenerator();
 					randomGemValuesGenerator();
-					yourScoreIs = 0;
+					score = 0;
 					$("#score").html(score);
 				}
 
 				 
-				if (yourScoreIs > randomNumber) {
+				if (score > randomNumber) {
 					losses = losses + 1;
 					$("#losses").html("Losses: " + losses);
 					$("#message").html("YOU LOSE");
 					 
 					randomNumberGenerator();
 					randomGemValuesGenerator();
-					yourScoreIs = 0;
-					$("#yourScore").html(yourScoreIs);
+					score = 0;
+					$("#score").html(score);
 				}
 		});
 
-	//======
 
 	//Reset Game Stats
 		//When the user clicks on the reset button, reset all game stats:
 		$("#reset").on("click", function() {
 			wins = 0;
 			losses = 0;
-			yourScoreIs = 0;
+			score = 0;
 			$("#wins").html("Wins: " + 0);
 			$("#losses").html("Losses: " + 0);
 			$("#score").html(score);
