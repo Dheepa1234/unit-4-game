@@ -1,8 +1,4 @@
-
-
-body {
-	background-image: url("../images/background.jpg");
-}
+//** CSS selectprs */
 
 
 .wrapper {
@@ -34,22 +30,26 @@ h1{
 	border: solid 1px #FFDAB9
 }
 
-.wrapper {
-	background: url("../images/dark_embroidery.png");
-}
+
 
 .row {
 	margin-bottom: 10px;
 }
 
-.randomNumberDiv {
+.random Number {
 	background-color: lightgreen;
+
+	
 }
 
-.winsLossesDiv {
+.winsLoss {
+
+	background-color: lightblue    ;
+}
+.User Score {
 	background-color: lightblue;
 }
 
-.scoreDiv {
+.Total Score {
 	background-color: pink;
 }
