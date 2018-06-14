@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title> Crystals Collector Game</title>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width-device-width, inital-scale=1">
+
+<!--The following is a link to the jQuery library-->
+
+    <script src="assets/javascript/jquery-3.1.1.min.js"></script>
+
+<!--The following is a link to a personal stylesheet-->
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"
+
+<!--The following is a link to a reset stylesheet-->
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+
+<body>
+
+    <!--This html page should contain one large wrapper for the entire page.-->
+    <!--Within the wrapper container, there is a crystals collector header at the top.-->
+    <!--Below the Crystals Collector section there is an instructions section.
+    <!--On the left hand side, there is a box conatining a number. This is another division-->
+    <!--On the right hand side, there is a win and loss counter-->
+    <!--Beneath the wins/loss counter, there should be a division for gem buttons-
+    <!--There should be a total score division beneath the gem division -->
+    <!--There is a footer border at the bottom within the wrapper container-->
+
+<!--The following should provide the wrapper container that houses all the divisions-->
+
+<div class="wrapper">
+
+    <!--Header-->
+            
+            <h1> Crystals Collector!</h1>
+
+            <!--The following are instructions for the player to follow-->
+
+
+            <p>You will be given a random number at the start of the game.</p>
+
+            <p>There are four crystals below. By cliking on a crystal you will add a specific amount of 
+             points to your total score.
+            </p>
+
+            <p>You win the game by matching your total score to random number. You lose the game if your total
+            score goes above the random number. </p>
+
+            <p>The value of each crystal is hidden from you until you click on it</p>
+
+            <p>Each time when the game starts. The game wil change the values of each cyrstal.</p>
+            </p>
+
+        
+
+    <!--This division will provide the random number --> 
+
+    <div class="row">
+        <div class="col-md-3 col-md-offset-1 randomNumberDiv">
+            <h2 id="randomNumber">random#</h2>
+
+        </div>
+    <!--This division will provide the counter-->
+
+        <div class="col-md-3 col-md-offset-1 winsLossesDiv">
+            <p id="winsCounter"> Wins: </p>
+            <p id="lossescounter">Losses</p>
+        </div>
+
+</div>
+
+`<!--The following divisions are the crystal gem sections-->
+
+    <div class="row">
+        <div class-"col-md-1" col-md-offset-1 gem" value="gem1>
+                <img src="assets/images/gem1.png class="img-responsive alt="Gem1">
+        </div>
+
+        <div class="col-md-1 cold-md-offset-1 gem" value="gem2">
+                <img scr="assets/images/gem2.png" class="img-responsive" alt="Gem2">
+        </div>
+        <div class="col-md-1 col-md-offset-1 gem" value="gem4">
+            <img src="assets/images/gem4.png" class="img-responsive" alt="Gem4">
+        </div>
+    
+    </div>
+
+    <div class="userTotal">
+        <h2> Your total score is: 
+
+            <span id="finalTotal"></span>
+        </h2>
+
+    </div>
+
+<!--The following division provies the total score-->
+
+<div class="row">
+    <div class="col-md-3 col-md-offset-1 scoreDiv">
+        <p>Your total score is:</p>
+    </div>
+
+<!--This division provdes the user score information-->
+
+<div class="row">
+    <div class="col-md 3" col-md-offset-1 scoreDiv">
+        <h2 id="userScore">Score</h2>
+    </div>
+
+<!--This seciton now ends the container -->
+
+</div>
+
+</body>
+</html>
