@@ -1,201 +1,103 @@
-/* The following will provide a $(document).ready jQuery event. This fires as soon the DOM is loaded.*/
-/* This is the earliest point in the page load process. */
-/*This event firest before all of the images, css, etc.*/
-/*This event contains variables that contain the data for different objects in the browser window *
+$(function() {
 
-/*The game should do these things: 
-   -the computer should generate a random number between 19 and 20.
-   -a number between 1 and 12 is assigned to each gem button
-   -user has to click on each gem button
-   -when each buttion is clicked, the button adds value to the score
-   -when the score matches a random number exactly, the user wins: add a
-   win, display a message, generate new random number
-   -the game should display all game stats to the user
-   -the reset button should reset all stats
-*/
+    // Selects a random number between 19 - 120 to be shown at the start of the game.
+    var randomMatch = Math.floor(Math.random() * 120) + 1;
+    $('#randomNumber').text(randomMatch);
 
-/*The document-ready function starts here, The function generates the randome number
-and calls it later. Identifers are given with the var keyword. The random 
-number function should return a number between 19 and 120. The randomGemValues generator should
-generate random numbers and assign them to each gem */
+    //loads page with instructions hidden. 
+    //Does anybody really read instructions?
+    var par = $('p');
+    $(par).hide();
+    $("h4").click(function() {
+        $("p").toggle();
+    });
 
-/*I am still not confident with the console log, and have thus not implemented it yet in areas where it 
-might be helpful*/
 
-$(document).ready (function() { 
-      var randomNumber = 0;
-      var greenGemNumber = 0;
-      var redGemNumber = 0;
-      var blueGemNumber = 0;
-      var yellowGemNumber = 0;
-    
-        function randomNumberGenerator (){
-            randomNumber = Math.floor(Math.random() * (120-19+1) ) +19;
-      }
-      
-      $("#randomNumber").html (randomNumber);
+    //Selects a random number between 1-12 for each crystal.
+    var randomOne = Math.floor(Math.random() * 12) + 1;
+    var randomTwo = Math.floor(Math.random() * 12) + 1;
+    var randomThree = Math.floor(Math.random() * 12) + 1;
+    var randomFour = Math.floor(Math.random() * 12) + 1;
 
-    }   function randomGemValuesGenerator (){
+    //Starts game with blank slate.
+    var playerTotal = 0;
+    var wins = 0;
+    var losses = 0;
 
-            greenGemNumber = Math.floor (Math.random)() *12 + 1;
-            redGemNumber = Math.floor (Math.random)() *12 + 1;
-            blueGemNumber = Math.floor (Math.random)() *12 + 1;
-            yellowGemNumber = Math.floor (Math.random)() *12 + 1;
+    //Sets up placeholders for scores and bon mots.
+    $('#playerWins').text(wins);
+    $('#playerLosses').text(losses);
 
+
+    //Reset
+    //When the game begins again, the player should see a new random number.
+    //Also, all the crystals will have four new hidden values.
+    //The user's score (and score counter) will reset to zero.
+    function reset() {
+        randomMatch = Math.floor(Math.random() * 120) + 1;
+        $('#randomNumber').text(randomMatch);
+        randomOne = Math.floor(Math.random() * 12) + 1;
+        randomTwo = Math.floor(Math.random() * 12) + 1;
+        randomThree = Math.floor(Math.random() * 12) + 1;
+        randomFour = Math.floor(Math.random() * 12) + 1;
+        playerTotal = 0;
+        $('#finalTotal').text(playerTotal);
     }
 
+    //Adds the wins to the player's scores and calls reset
+    function jollyGood() {
+        $('#status').text('Jolly Good');
+        wins++;
+        $('#playerWins').text(wins);
+        reset();
+    }
+    //Adds the losses to the player's scores and calls reset
+    function goodTry() {
+        $('#status').text('Bad Luck');
+        losses++;
+        $('#playerLosses').text(losses);
+        reset();
+    }
 
-    randomNumberGenerator ();
-    randomGemValuesGenerator ();
+    //Basic Game set-up click for crystals
+    $('#one').on('click', function() {
+        playerTotal = playerTotal + randomOne;
+        $('#finalTotal').text(playerTotal);
+        //sets win/lose conditions
+        if (playerTotal === randomMatch) {
+            jollyGood();
+        } else if (playerTotal > randomMatch) {
+            goodTry();
+        }
+    });
 
-   var score =  0;
-   var wins = 0;
-   var losses = 0;
+    $('#two').on('click', function() {
+        playerTotal = playerTotal + randomTwo;
+        $('#finalTotal').text(playerTotal);
+        if (playerTotal === randomMatch) {
+            jollyGood();
+        } else if (playerTotal > randomMatch) {
+            goodTry();
+        }
+    });
 
-   /* This should make the on-clic function work. I hope it works. (I don't think it will.)*/
+    $('#three').on('click', function() {
+        playerTotal = playerTotal + randomThree;
+        $('#finalTotal').text(playerTotal);
+        if (playerTotal === randomMatch) {
+            jollyGood();
+        } else if (playerTotal > randomMatch) {
+            goodTry();
+        }
+    });
 
-   $("greenGem").on("click",) function (){
-       score = score + greenGemNumber;
-       $("score").html (score);
-
-       
-				if (score === randomNumber) {
-					wins = wins + 1;
-					$("#wins").html("Wins: " + wins);
-					$("#message").html("YOU WIN");
-                    
-                    
-					randomNumberGenerator();
-					randomGemValuesGenerator();
-					score = 0;
-					$("#score").html(score);
-				}
-
-				
-				if (score> randomNumber) {
-					losses = losses + 1;
-					$("#losses").html("Losses: " + losses);
-					$("#message").html("YOU LOSE");
-					
-					randomNumberGenerator();
-					randomGemValuesGenerator();
-					score = 0;
-					$("#score").html(score);
-				}
-		});
-
-		
-		$("#redGem").on("click", function() {
-			score = score + redGemNmbr;
-			$("#score").html(yourScoreIs);
-
-			
-				if (score === randomNumber) {
-					wins = wins + 1;
-					$("#wins").html("Wins: " + wins);
-					$("#message").html("YOU WIN");
-					 
-					randomNumberGenerator();
-					randomGemValuesGenerator();
-					score = 0;
-					$("#score").html(score);
-				}
-
-				 
-				if (score > randomNumber) {
-					losses = losses + 1;
-					$("#losses").html("Losses: " + losses);
-					$("#message").html("YOU LOSE");
-					 
-					randomNumberGenerator();
-					randomGemValuesGenerator();
-					score = 0;
-					$("#yourScore").html(score);
-				}
-		});
-		
-		$("#yellowGem").on("click", function() {
-			score = score + yellowGemNmbr;
-			
-			$("#yourScore").html(score);
-
-			
-				if (score === randomNumber) {
-					wins = wins + 1;
-					$("#wins").html("Wins: " + wins);
-					$("#message").html("YOU WIN");
-					 
-					randomNumberGenerator();
-					randomGemValuesGenerator();
-					score = 0;
-					$("#yourScore").html(score);
-				}
-
-				 
-				if (score > randomNumber) {
-					losses = losses + 1;
-					$("#losses").html("Losses: " + losses);
-					$("#message").html("YOU LOSE");
-					 
-					randomNumberGenerator();
-					randomGemValuesGenerator();
-					score = 0;
-					$("#yourScore").html(score);
-				}
-		});
-
-		
-		$("#blueGem").on("click", function() {
-			score = score + blueGemNmbr;
-			 
-			$("#Score").html(score);
-
-			 
-
-				 
-				if (score === randomNumber) {
-					wins = wins + 1;
-					$("#wins").html("Wins: " + wins);
-					$("#message").html("YOU WIN");
-					 
-					randomNumberGenerator();
-					randomGemValuesGenerator();
-					score = 0;
-					$("#score").html(score);
-				}
-
-				 
-				if (score > randomNumber) {
-					losses = losses + 1;
-					$("#losses").html("Losses: " + losses);
-					$("#message").html("YOU LOSE");
-					 
-					randomNumberGenerator();
-					randomGemValuesGenerator();
-					score = 0;
-					$("#score").html(score);
-				}
-		});
-
-
-	//Reset Game Stats
-		//When the user clicks on the reset button, reset all game stats:
-		$("#reset").on("click", function() {
-			wins = 0;
-			losses = 0;
-			score = 0;
-			$("#wins").html("Wins: " + 0);
-			$("#losses").html("Losses: " + 0);
-			$("#score").html(score);
-			$("#message").html();
-			randomNumberGenerator();
-			randomGemValuesGenerator();
-		});
-
- 
-
+    $('#four').on('click', function() {
+        playerTotal = playerTotal + randomFour;
+        $('#finalTotal').text(playerTotal);
+        if (playerTotal === randomMatch) {
+            jollyGood();
+        } else if (playerTotal > randomMatch) {
+            goodTry();
+        }
+    });
 });
-
-
-
-   

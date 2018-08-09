@@ -1,189 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
-    <title> Crystals Collector Game</title>
-    <meta charset = "UTF-8">
-    <meta name="viewport" content="width-device-width, inital-scale=1">
-
-<!--The following are links to the  javascript, a personal stylesheet and a reset stylesheet-->
- 
-	<script type="text/javascript" src="assets/javascript/game.js"</script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-
-<!--This tag should set provide the  viewport, the visible area of the user's browser -->
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- This tag should link to  jQuery CDN -->
-
-<script src="script src"="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-</head>
-
-<body>
-
- <!--This html page should contain one large wrapper for the entire page -->
- <!--Within the wrapper container, there is a crystals collector header at the top-->
- <!--Below the Crystals Collector section there is an instructions section -->
- <!--On the left hand side, there is a box conatining a number. This is another division-->
- <!--On the right hand side, there is a win and loss counter-->
- <!--Beneath the wins/loss counter, there should be a division for gem buttons-
- <!--There should be a total score division beneath the gem division -->
- <!--There is a footer border at the bottom within the wrapper container-->
-
-<!--The following should provide the wrapper container that houses all the divisions-->
-
-<div class="wrapper">
-
-<!--Header-->
-            
-            <h1> Crystals Collector!</h1>
-
-            <!--The following are instructions for the player to follow-->
-
- <!--The following is a division for the instructions-->
-
- <div class="instructions"></div>
-
-
-            <p>You will be given a random number at the start of the game.</p>
-
-            <p>There are four crystals below. By cliking on a crystal you will add a specific amount of 
-             points to your total score.
-            </p>
-
-            <p>You win the game by matching your total score to random number. You lose the game if your total
-            score goes above the random number. </p>
-
-            <p>The value of each crystal is hidden from you until you click on it</p>
-
-            <p>Each time when the game starts. The game wil change the values of each cyrstal.</p>
-            </p>
-
-        
-
-    <!--This division should provide the random number --> 
-
-    <div class="random number">
-         
-            <h> Random Number</h2>
-
-        </div>
-
-    <!--This division should provide the number counter-->
-
-        <div class = "winsloss"
-       
-            <p class="winsCounter"> Wins: </p>
-            <p class ="lossescounter">Losses: </p>
-       
-        </div>
-
-</div>
-
-<!--The following divisions are the crystal gem sections-->
-
- <!-- This division should make the green gem button -->
-
-    <div class="row">
-				
-				
-					<img src="assets/images/greengem.jpeg" alt="Green Diamond" id="greenGem">
-				</div>
-	
-    <div class="row">
-
-    <!-- This division should amke the red gem button-->
-
-				
-					<img src="assets/images/redgem.jpeg" alt="Red Diamond" id="redGem">
-
-				</div>
-
-		<!-- This division should make the yellow gem button -->
-        
-        <div class="row">
-				
-					<img src="assets/images/yellowgem.jpeg" alt="Yellow Diamond" id="yellowGem">
-				
-                </div>
-
-		<!-- This division hould make the blue gem button-->
-
-				
-					<img src="assets/images/bluegem.jpeg" alt="Blud Diamond" id="blueGem">
-				</div>
-			</div>
-		</div>
-
-    </div>
-
-    <!---The following division should provide the score column -->
-
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" id="scoreCol">
-			<h2>Your Score Is</h2>
-			<span id="scoreCol">0</p>
-		</div>
-
-    </div>
-
-<!--The following division provides the total score-->
-
-<div class="Total Score">
-
-     <p>Your total score is:</p>
-    
-    </div>
-
-<!--This division provdes the user score information-->
-
-<div class="User Score">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
    
-        <h2 id="userScore">Score</h2>
-    
+    <!-- Up to 70 Characters of Keyword-relevant text here -->
+    <title>Crystals Collector</title>
+    <!--Faviocon-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!--Myers reset-->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!--Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <!--Local CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<header>
+    <div class="box">
+        <div class="game">
+            <h1> Crystals Collector !</h1>
+        </div>
+        <!--closes game-->
+        <div class="instructions">
+            <h4> Click here for instructions.</h4>
+            <p>The computer will choose a random number to start the game.</p>
+            <br />
+            <p>There are four crystals, the value of each is hidden until you click on it. By clicking on a crystal you will add points to your score.</p>
+            <br />
+            <p> You win the game by matching your total score to the computer.</p>
+            <br />
+            <p> You lose the game if your total score goes above the computer.</p>
+            <br />
+            <p> Each time when the game start, the game will change the values of each crystal.</p>
+        </div>
+        <!--closes instructions-->
     </div>
-
-
-
-<!-- This division  stores win and loss messages -->
-
-	<div class="row">
-		<div class="col-md-12">
-			<h3 id="message"></h3>
-		</div>
-	</div>
-
-
-	<!-- This division stores wins and Losses: -->
-	
-    <div class="row" id="gameStats">
-
-		 
-		<div class="col-md-6">
-			<h2 id="wins">Wins: 0</h2>
-		</div>
-
-		
-		<div class="col-md-6">
-			<h2 id="losses">Losses: 0</h2>
-		</div>
-
-	</div>
-
-	<!-- This division resets game -->
-
-	<div class="row">
-		<div class="col-md-12" id="resetCol">
-			<button type="button" class="btn btn-default btn-lg" id="reset">RESET GAME</button>
-		</div>
-
-	</div>
-
-</div>
-
+    <!--closes box-->
+</header>
+<main>
+    <div class="box">
+        <div class="board">
+            <h2> Wins: <span id="playerWins"></span></h2>
+        </div>
+        <!--closes board-->
+        <div class="board">
+            <h3 id="status">Good Luck!</h3>
+        </div>
+        <!--closes board-->
+        <div class="board">
+            <h2> Losses: <span id="playerLosses"></span></h2>
+        </div>
+        <!--closes board-->
+        <!--images-->
+        <img src="assets/images/blue-gem.jpeg" id="one" alt="blue crystal">
+        <img src="assets/images/green-gem.jpeg" id="two" alt="greem crystal">
+        <img src="assets/images/red-gem.jpeg" id="three" alt="red crystal">
+        <img src="assets/images/yellow-gem.jpeg" id="four" alt="yellow crystal">
+        <div class="clear"></div>
+        <div class="score">
+            <h2>Number to Match:
+                <span id="randomNumber"></span>
+            </h2>
+        </div>
+        <!--closes score-->
+        <div class="score">
+            <h2>Player Total:
+                <span id="finalTotal"></span>
+            </h2>
+        </div>
+        <!--closes score-->
+    </div>
+    <!--closes box-->
+</main>
+<footer>
+    
+</footer>
+<!--jQuery Link-->
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
-</html>
 
- 
+</html>
